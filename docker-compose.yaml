@@ -10,6 +10,8 @@ services:
     build:
       dockerfile: ./docker/php/Dockerfile
     volumes:
+      - /var/www/html/var/
+      - /var/www/html/vendor
       - ./app:/var/www/html/
     depends_on:
       - db

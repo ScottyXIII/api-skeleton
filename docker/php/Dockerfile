@@ -8,7 +8,7 @@ COPY --from=composer:2.7 /usr/bin/composer /usr/bin/composer
 
 COPY ./app/composer.* ./
 
-RUN composer install --prefer-dist --no-dev --no-scripts --no-progress --no-interaction
+RUN composer install --prefer-dist --no-scripts --no-progress --no-interaction
 
 COPY ./app .
 
