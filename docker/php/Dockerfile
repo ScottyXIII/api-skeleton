@@ -8,7 +8,9 @@ COPY --from=composer:2.7 /usr/bin/composer /usr/bin/composer
 
 COPY ./app/composer.* ./
 
-RUN composer install --prefer-dist --no-scripts --no-progress --no-interaction
+RUN mkdir -p /var/www/html/var/cache/dev /var/www/html/var/log \
+    chmod -R 777 /var \
+    composer install --prefer-dist --no-scripts --no-progress --no-interaction
 
 COPY ./app .
 
