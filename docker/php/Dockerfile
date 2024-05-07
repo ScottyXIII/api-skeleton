@@ -10,7 +10,7 @@ COPY ./app/composer.* ./
 
 WORKDIR /var/www/html
 
-RUN composer install --prefer-dist --no-scripts --no-progress --no-interaction;
+RUN composer install --prefer-dist --no-dev --no-scripts --no-progress --no-interaction;
 
 COPY ./app .
 
